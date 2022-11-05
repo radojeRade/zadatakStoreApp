@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function AppCustomersComponent({id, name, surname, onDelete}){
     
@@ -6,7 +7,7 @@ export default function AppCustomersComponent({id, name, surname, onDelete}){
     <div>
         <ul>
             <li>
-            <p>{name} <span> {surname}</span> </p>
+            <Link to = {`/customers/${id}`}><p>{name} <span> {surname}</span> </p></Link>
             <span> <button onClick = {() => onDelete(id)}>Delete</button></span>
            
             </li>
