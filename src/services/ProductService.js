@@ -15,6 +15,11 @@ class ProductService {
                 id:3,
                 name: "Kavez",
             
+            },
+            {
+                id:4,
+                name: "Lizalica",
+            
             }
         ]
     }
@@ -32,7 +37,11 @@ class ProductService {
         
     }
     search(term){
+        let arr = this.products.filter((product) => {
+            return (product.name.toLowerCase().includes(term.toLowerCase())
 
+        )})
+        return arr;
     }
 }
 export default new ProductService();

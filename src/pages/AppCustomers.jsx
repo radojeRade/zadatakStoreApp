@@ -28,6 +28,7 @@ export default function AppCustomers(){
             setCustomers([...customers, res]);
         }
     }
+    
 
     return ( 
     <div>
