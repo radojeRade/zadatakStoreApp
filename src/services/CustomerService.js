@@ -24,7 +24,10 @@ class CustomerService {
         return this.customers;
     }
     get(id) {
-        return this.customers.find((customer) => customer.id === id);
+       
+        let user = this.customers.find((customer) => customer.id === Number(id.customerId))
+       
+        return user;
       }
     delete(id) {
         let newCustomer = this.customers.filter(x => x.id !== id);
