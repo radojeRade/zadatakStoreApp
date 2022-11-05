@@ -34,5 +34,12 @@ class CustomerService {
          
          return this.customers;
     }
+    create(customer) {
+        let id = this.customers.length +1;
+        let addCustomer = {...customer, id};
+        this.customers = [...this.customers, addCustomer];
+
+        return addCustomer;
+    }
 }
 export default new CustomerService();
