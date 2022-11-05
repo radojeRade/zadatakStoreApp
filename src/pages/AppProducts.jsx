@@ -6,10 +6,18 @@ export default function AppProducts(){
 
     const [products, setProducts] = useState(ProductService.getAll());
     const [searchTerm, setSearchTerm] = useState("");
+    const [count, setCount] = useState(0);
     
     const search = (term) => {
         setSearchTerm(term);
         setProducts([...ProductService.search(searchTerm)]);
+    }
+
+    const increment = (id) => {
+        setProducts([...ProductService.increment(id)]);
+    }
+    const decrement = (id) => {
+        setProducts([...ProductService.decrement(id)]);
     }
 
     return ( 
@@ -23,6 +31,9 @@ export default function AppProducts(){
                     <AppProductsComponent key={product.id}
                                             id = {product.id}
                                             name = {product.name}
+                                            count = {product.count}
+                                            increment = {increment}
+                                            decrement = {decrement}
                                              />
                                             ))
             }
