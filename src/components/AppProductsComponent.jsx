@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 export default function AppProductsComponent({id, name, count, increment, decrement}){
@@ -7,7 +8,7 @@ export default function AppProductsComponent({id, name, count, increment, decrem
     <div>
         <ul>
             <li>
-            <p>{name} {count}</p>
+            <Link to = {`/products/${id}`}><p>{name} {count}</p></Link>
             <button onClick={() => increment(id)}>+</button>
             <button onClick={() => decrement(id)}>-</button>
 

@@ -5,17 +5,25 @@ class CustomerService {
             {
                 id:1,
                 name: "Marko",
-                surname: "Markovic"
+                surname: "Markovic",
+                products: [{
+                    id:1,
+                    name: "Bic",
+                    count: 3,
+                    
+                },]
             },
             {
                 id:2,
                 name: "Zarko",
-                surname: "Zarkovic"
+                surname: "Zarkovic",
+                products: []
             },
             {
                 id:3,
                 name: "Pera",
-                surname: "Perovic"
+                surname: "Perovic",
+                products: []
             }
         ]
     }
@@ -43,6 +51,17 @@ class CustomerService {
         this.customers = [...this.customers, addCustomer];
 
         return addCustomer;
+    }
+    buyProduct(product, customerId){
+      console.log(customerId);
+        let arr =this.customers.map(el => {
+            if(el.id === customerId){
+                el.products.push(product);
+            }
+            return el;
+        })
+        this.customers = [...arr];
+        return this.customers;
     }
 }
 export default new CustomerService();

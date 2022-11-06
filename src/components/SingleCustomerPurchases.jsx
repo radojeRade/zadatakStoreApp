@@ -5,14 +5,12 @@ export default function SingleCustomerPurchases({name, surname, purchases}){
     <div>
         <h2>{name} {surname}</h2>
         
-        {purchases ?
+        {purchases.length > 0 ?
             
-            purchases.map(purchase => ( 
-                <ul> 
-                <li key = {purchase.id}>
+            purchases.map((purchase, index) => (  
+                <p key = {index}>
                     {purchase.name}
-                </li>
-                </ul>
+                </p>
             ))
             
             : <p>Korisnik nema listu proizvoda!</p>

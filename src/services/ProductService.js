@@ -4,7 +4,7 @@ class ProductService {
             {
                 id:1,
                 name: "Bic",
-                count: 0,
+                count: 3,
                 
             },
             {
@@ -16,12 +16,12 @@ class ProductService {
             {
                 id:3,
                 name: "Kavez",
-                count: 0,
+                count: 5,
             },
             {
                 id:4,
                 name: "Lizalica",
-                count: 0,
+                count: 6,
             }
         ]
     }
@@ -30,7 +30,10 @@ class ProductService {
         return this.products;
     }
     get(id) {
-        return this.products.find((product) => product.id === id);
+       
+        let singleProduct = this.products.find((product) => product.id === Number(id.productId))
+       
+        return singleProduct;
       }
     delete() {
         

@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import AppCustomers from "./pages/AppCustomers";
 import AppProducts from "./pages/AppProducts";
 import SingleCustomer from "./pages/SingleCustomer";
+import SingleProduct from "./pages/SingleProduct";
 
 export default function Router(){
 
@@ -14,8 +15,11 @@ export default function Router(){
         <Route path="/customers/:customerId">
             <SingleCustomer />
         </Route>
-        <Route path="/products">
+        <Route exact path="/products">
             <AppProducts />
+        </Route>
+        <Route path="/products/:productId">
+            <SingleProduct />
         </Route>
     </Switch>
     )
